@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marvin's of Cotati | Breakfast & Lunch in Cotati, CA</title>
+<meta name="description" content="Marvin's of Cotati: a hometown breakfast and lunch spot on Old Redwood Hwy. Open daily 6am to 2:30pm. Dine in or take out. Call 707-664-1720.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#1d3f8f; --blue-deep:#142c66; --red:#c8402c; --cream:#fbf6ec; --paper:#fffdf8;
+  --ink:#1f1d1a; --muted:#6b645a; --line:#e7ddca; --gold:#e8a33d;
+  --img:"https://images.squarespace-cdn.com/content/v1/5e754d66d221ad65ba30bbe3/";
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.55;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.1}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(251,246,236,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{font-family:Fraunces,serif;font-weight:800;font-size:1.35rem;color:var(--blue);text-decoration:none;letter-spacing:-.025em;white-space:nowrap}
+.logo span{color:var(--red)}
+.nav ul{display:flex;gap:24px;list-style:none;font-weight:500;font-size:.95rem}
+.nav ul a{text-decoration:none;color:var(--ink)}
+.nav ul a:hover{color:var(--red)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-weight:600;text-decoration:none;font-size:.95rem;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:#ad3523}
+.btn-ghost{border:2px solid #fff;color:#fff}
+.btn-ghost:hover{background:#fff;color:var(--blue)}
+.nav .btn{padding:9px 16px;white-space:nowrap}
+.nav .btn svg{flex:none}
+@media(max-width:760px){.nav ul{display:none}}
+@media(max-width:480px){
+  .nav .wrap{height:58px;padding-inline:16px;gap:12px}
+  .logo{font-size:1.2rem}
+  .nav .btn{width:40px;height:40px;padding:0;justify-content:center}
+  .nav .btn .phone-number{display:none}
+}
+
+/* hero */
+.hero{position:relative;min-height:min(88vh,720px);display:grid;align-items:end;color:#fff;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,20,50,.15) 0%,rgba(10,20,50,.35) 40%,rgba(10,20,50,.85) 100%)}
+.hero .wrap{width:100%;position:relative;z-index:1;padding-bottom:64px;padding-top:120px}
+.eyebrow{display:inline-block;font-size:.8rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:6px 12px;border-radius:4px;margin-bottom:18px}
+.hero h1{font-size:clamp(2.6rem,7vw,5rem);font-weight:800;max-width:14ch;letter-spacing:-.02em}
+.hero p{font-size:clamp(1.05rem,2vw,1.25rem);max-width:46ch;margin:16px 0 28px;opacity:.95}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px}
+
+/* info strip */
+.info{background:var(--blue);color:#fff}
+.info .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.info-item{padding:26px 20px;border-right:1px solid rgba(255,255,255,.14)}
+.info-item:last-child{border-right:0}
+.info-item small{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;opacity:.7;margin-bottom:6px}
+.info-item strong{font-size:1.08rem;font-weight:600}
+.info-item a{text-decoration:none}
+.info-item a:hover{text-decoration:underline}
+.status{display:inline-flex;align-items:center;gap:8px}
+.dot{width:9px;height:9px;border-radius:50%;background:#7ee08a;box-shadow:0 0 0 4px rgba(126,224,138,.25)}
+.dot.closed{background:#ff8a7a;box-shadow:0 0 0 4px rgba(255,138,122,.25)}
+.socials{display:flex;gap:10px}
+.socials a{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.12);padding:6px 12px;border-radius:999px;font-size:.9rem;font-weight:500}
+.socials a:hover{background:rgba(255,255,255,.22);text-decoration:none}
+.socials svg{width:16px;height:16px}
+@media(max-width:860px){.info .wrap{grid-template-columns:1fr 1fr}.info-item:nth-child(2){border-right:0}.info-item:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.14)}}
+@media(max-width:480px){.info .wrap{grid-template-columns:1fr}.info-item{border-right:0;border-bottom:1px solid rgba(255,255,255,.14)}}
+
+/* sections */
+section{padding:88px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:36px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(2rem,4.5vw,3rem);color:var(--blue-deep);letter-spacing:-.015em}
+.sec-head p{color:var(--muted);max-width:46ch}
+.kicker{font-size:.78rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+
+/* about */
+.about{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+.about-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.about-photos img{border-radius:14px;aspect-ratio:4/5;object-fit:cover;width:100%}
+.about-photos img:nth-child(2){margin-top:48px}
+.about h2{font-size:clamp(2rem,4vw,2.8rem);color:var(--blue-deep);margin-bottom:18px}
+.about p{color:#3b3731;margin-bottom:14px;font-size:1.05rem}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.badges span{background:var(--paper);border:1px solid var(--line);padding:8px 14px;border-radius:999px;font-size:.9rem;font-weight:500}
+@media(max-width:860px){.about{grid-template-columns:1fr;gap:36px}}
+
+/* gallery */
+.gallery-sec{background:var(--paper);border-block:1px solid var(--line)}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:14px}
+.gallery figure{position:relative;overflow:hidden;border-radius:14px;background:#ddd}
+.gallery figure img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gallery figure:hover img{transform:scale(1.05)}
+.gallery figcaption{position:absolute;left:10px;bottom:10px;background:rgba(255,253,248,.95);padding:6px 11px;border-radius:999px;font-size:.82rem;font-weight:600}
+.g-wide{grid-column:span 2}
+.g-tall{grid-row:span 2}
+@media(max-width:860px){.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:180px}}
+@media(max-width:480px){.g-wide{grid-column:span 2}.g-tall{grid-row:span 1}}
+
+/* menu */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.tab{appearance:none;border:2px solid var(--blue);background:transparent;color:var(--blue);font:600 1rem Inter,sans-serif;padding:11px 22px;border-radius:999px;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--blue);color:#fff}
+.tab .t-sub{font-weight:400;opacity:.75;font-size:.85rem;margin-left:4px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:4px 0 14px;margin-bottom:22px;border-bottom:1px solid var(--line);scrollbar-width:thin}
+.chips a{flex:none;text-decoration:none;font-size:.88rem;font-weight:500;padding:7px 14px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink)}
+.chips a:hover{border-color:var(--red);color:var(--red)}
+.panel[hidden]{display:none}
+.cat{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:32px;margin-bottom:22px}
+.cat-head{display:flex;gap:22px;align-items:center;margin-bottom:8px}
+.cat-head img{width:92px;height:92px;border-radius:50%;object-fit:cover;flex:none;border:3px solid #fff;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.cat h3{font-size:1.75rem;color:var(--blue-deep)}
+.cat-note{color:var(--muted);font-size:.93rem;margin-top:4px}
+.items{display:grid;grid-template-columns:1fr 1fr;gap:4px 48px;margin-top:20px}
+.item{padding:14px 0;border-bottom:1px dashed var(--line)}
+.item-top{display:flex;align-items:baseline;gap:10px}
+.item-name{font-weight:600;font-size:1.02rem}
+.leader{flex:1;border-bottom:2px dotted #cdbfa6;transform:translateY(-4px);min-width:16px}
+.price{font-weight:600;color:var(--red);font-variant-numeric:tabular-nums;white-space:nowrap}
+.desc{color:var(--muted);font-size:.92rem;margin-top:3px}
+.opts{list-style:none;margin-top:6px}
+.opts li{display:flex;justify-content:space-between;gap:12px;font-size:.9rem;color:#4a453e;padding:2px 0 2px 12px;border-left:2px solid var(--line)}
+.opts li span:last-child{font-variant-numeric:tabular-nums;color:var(--ink);font-weight:500;white-space:nowrap}
+.tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:2px 7px;border-radius:4px;margin-left:6px;vertical-align:2px}
+@media(max-width:760px){.items{grid-template-columns:1fr}.cat{padding:22px 18px}.cat-head img{width:64px;height:64px}.cat h3{font-size:1.45rem}}
+
+/* visit */
+.visit{background:var(--blue-deep);color:#fff}
+.visit .sec-head h2{color:#fff}
+.visit .kicker{color:var(--gold)}
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.card{min-width:0;overflow-wrap:anywhere;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:30px}
+.card h3{font-size:1.4rem;margin-bottom:16px}
+.hours{list-style:none}
+.hours li{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.hours li.today{color:var(--gold);font-weight:600}
+.contact-line{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.contact-line svg{width:22px;height:22px;flex:none;margin-top:2px;color:var(--gold)}
+.contact-line a{text-decoration:none}
+.contact-line a:hover{text-decoration:underline}
+.visit .btn-red{margin-top:22px}
+@media(max-width:760px){.visit-grid{grid-template-columns:1fr}}
+
+footer{background:#0d1f4a;color:rgba(255,255,255,.75);padding:28px 0;font-size:.88rem}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:#fff}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top">Marvin's <span>of Cotati</span></a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#gallery">Photos</a></li>
+      <li><a href="#visit">Hours &amp; Location</a></li>
+    </ul>
+    <a class="btn btn-red" href="tel:+17076641720" aria-label="Call Marvin's at 707-664-1720" title="Call Marvin's at 707-664-1720">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+      <span class="phone-number">707-664-1720</span>
+    </a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <img src="https://images.squarespace-cdn.com/content/v1/5e754d66d221ad65ba30bbe3/c59f7b9c-cea4-4e6a-acfc-206c5c45458a/tempImage5Dv5uw.jpg?format=2500w" alt="Marvin's burger topped with two fried eggs and bacon, served with steak fries">
+  <div class="wrap">
+    <span class="eyebrow">Cotati's Breakfast &amp; Lunch Spot</span>
+    <h1>Hearty plates, cooked to order.</h1>
+    <p>Classic American breakfasts, Mexican favorites and big lunches on Old Redwood Highway. Open every day from 6:00am. Dine in or take out.</p>
+    <div class="ctas">
+      <a class="btn btn-red" href="#menu">See the Menu</a>
+      <a class="btn btn-ghost" href="tel:+17076641720">Call to Order</a>
+    </div>
+  </div>
+</header>
+
+<div class="info">
+  <div class="wrap">
+    <div class="info-item">
+      <small>Hours</small>
+      <strong class="status"><span class="dot" id="statusDot"></span><span id="statusText">Open daily, 6am – 2:30pm</span></strong>
+    </div>
+    <div class="info-item">
+      <small>Call</small>
+      <strong><a href="tel:+17076641720">707-664-1720</a></strong>
+    </div>
+    <div class="info-item">
+      <small>Find us</small>
+      <strong><a href="https://www.google.com/maps/search/?api=1&query=7991+Old+Redwood+Hwy+Cotati+CA+94931" target="_blank" rel="noopener">7991 Old Redwood Hwy</a></strong>
+    </div>
+    <div class="info-item">
+      <small>Follow</small>
+      <div class="socials">
+        <a href="https://www.facebook.com/MarvinsRestaurant" target="_blank" rel="noopener" aria-label="Marvin's on Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v9h4v-9h3l.5-4h-3.5V8.8c0-.5.3-.8.5-.8z"/></svg>Facebook
+        </a>
+        <a href="https://instagram.com/Marvins_of_cotati" target="_blank" rel="noopener" aria-label="Marvin's on Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>Instagram
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap about">
+    <div>
+      <p class="kicker">Welcome to Marvin's</p>
+      <h2>A Cotati morning tradition.</h2>
+      <p>From pancake stacks and fresh strawberry waffles to chilaquiles, omelets and half-pound burgers, Marvin's has been the place to start the day in Cotati.</p>
+      <p>We roast our turkey in-house every day, make our corned beef hash, soups and chili from scratch, and pour Taylor Lane organic coffee, roasted daily.</p>
+      <div class="badges">
+        <span>Dine in</span><span>Take out</span><span>Open 7 days</span><span>Mimosas &amp; Micheladas</span>
+      </div>
+    </div>
+    <div class="about-photos">
+      <img src="https://images.squarespace-cdn.com/content/v1/5e754d66d221ad65ba30bbe3/1584750618837-FWQLZBKV3RCFKUI0H824/IMG_1319.jpeg?format=1000w" alt="Chilaquiles with steak, scrambled eggs and avocado" loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/5e754d66d221ad65ba30bbe3/1584749651844-UUXRQXAU8UNVZ8FZ3ERB/IMG_1349.jpg?format=1000w" alt="Fresh strawberry waffle with whipped cream" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section id="menu" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="kicker">Our Menu</p>
+        <h2>Breakfast, lunch &amp; everything in between.</h2>
+      </div>
+      <p>Serving breakfast and lunch every day, 6:00am to 2:30pm.</p>
+    </div>
+    <div class="tabs" role="tablist" id="tabs"></div>
+    <div id="panels"></div>
+  </div>
+</section>
+
+<section id="gallery" class="gallery-sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="kicker">From our kitchen</p>
+        <h2>Come hungry.</h2>
+      </div>
+      <p>See more on <a href="https://instagram.com/Marvins_of_cotati" target="_blank" rel="noopener">Instagram</a> and <a href="https://www.facebook.com/MarvinsRestaurant" target="_blank" rel="noopener">Facebook</a>.</p>
+    </div>
+    <div class="gallery" id="gallery-grid"></div>
+  </div>
+</section>
+
+<section id="visit" class="visit">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="kicker">Visit us</p>
+        <h2>Hours &amp; Location</h2>
+      </div>
+    </div>
+    <div class="visit-grid">
+      <div class="card">
+        <h3>Hours of Operation</h3>
+        <ul class="hours" id="hoursList"></ul>
+      </div>
+      <div class="card">
+        <h3>Get in Touch</h3>
+        <div class="contact-line">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
+          <div><a href="https://www.google.com/maps/search/?api=1&query=7991+Old+Redwood+Hwy+Cotati+CA+94931" target="_blank" rel="noopener">7991 Old Redwood Hwy<br>Cotati, CA 94931</a></div>
+        </div>
+        <div class="contact-line">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+          <div><a href="tel:+17076641720">707-664-1720</a><br><span style="opacity:.7;font-size:.9rem">Call ahead for take out</span></div>
+        </div>
+        <div class="contact-line">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v9h4v-9h3l.5-4h-3.5V8.8c0-.5.3-.8.5-.8z"/></svg>
+          <div><a href="https://www.facebook.com/MarvinsRestaurant" target="_blank" rel="noopener">facebook.com/MarvinsRestaurant</a></div>
+        </div>
+        <div class="contact-line" style="border-bottom:0">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>
+          <div><a href="https://instagram.com/Marvins_of_cotati" target="_blank" rel="noopener">@Marvins_of_cotati</a></div>
+        </div>
+        <a class="btn btn-red" href="https://www.google.com/maps/dir/?api=1&destination=7991+Old+Redwood+Hwy+Cotati+CA+94931" target="_blank" rel="noopener">Get Directions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> Marvin's of Cotati · 7991 Old Redwood Hwy, Cotati, CA · <a href="tel:+17076641720">707-664-1720</a></span>
+    <span>Website by Cromwell's Tech Solutions</span>
+  </div>
+</footer>
+
+<script>
+const IMG = "https://images.squarespace-cdn.com/content/v1/5e754d66d221ad65ba30bbe3/";
+const P = {
+  burgerEgg:  IMG+"c59f7b9c-cea4-4e6a-acfc-206c5c45458a/tempImage5Dv5uw.jpg",
+  frenchToast:IMG+"c73e46cd-e338-400f-af4b-de6fb9ff3cd3/tempImageiBBvwJ.jpg",
+  waffle:     IMG+"1584749651844-UUXRQXAU8UNVZ8FZ3ERB/IMG_1349.jpg",
+  chilaquiles:IMG+"1584750618837-FWQLZBKV3RCFKUI0H824/IMG_1319.jpeg",
+  burger:     IMG+"1584749872960-FAQ2T0CR7AHLMY1BQD0T/IMG_1366.jpeg",
+  drinks:     IMG+"1584750187320-X1SBHOKRI2LXUVC0WSR8/IMG_0842.jpeg",
+  zucchini:   IMG+"1584750229619-186NY39SZDXHL0BTQ9W0/IMG_0932.jpeg",
+  salad:      IMG+"1584750393769-VSMK8QZFCAJCRB4ZJR93/IMG_0942.jpg",
+  omelet:     IMG+"1584750424461-HKEVC8CBQJNN6Y295M6Z/IMG_1345.jpg",
+};
+const img = (k,w=500) => P[k]+"?format="+w+"w";
+
+/* Item shape: [name, price, description?, options?: [[label, price], ...], tag?] */
+const MENU = [
+ { id:"breakfast", label:"Breakfast", sections:[
+  { id:"eggs", title:"Eggs & Breakfast Plates", photo:"chilaquiles",
+    items:[
+     ["Eggs Any Style","10.95",null,[["Extra egg","1.25"],["Cheese on eggs or potatoes","1.00"]]],
+     ["Bacon or Sausage & Eggs","16.95","Four strips or links, cooked to order.",[["Half order","14.95"]]],
+     ["Chicken Apple Sausage & Eggs","15.95"],
+     ["Italian or Country Sausage & Eggs","15.95","Both tasty sausages made fresh locally."],
+     ["Chicken Fried Steak & Eggs","18.95"],
+     ["Huevos Rancheros","15.95","Crispy tortilla topped with eggs any style and homemade ranchera sauce, served with rice & beans."],
+     ["Linguiça & Eggs","15.95"],
+     ["Ham & Eggs","15.95"],
+     ["Chopped Beef Patty & Eggs","17.95"],
+     ["New York Steak & Eggs","22.95"],
+     ["Pork Chops & Eggs","18.95"],
+     ["Homemade Corned Beef Hash & Eggs","17.95",null,null,"House made"],
+     ["Eggs Benedict","16.95"],
+     ["Mexican Benedict","17.95"],
+    ]},
+  { id:"pancakes", title:"Pancakes & Things", photo:"frenchToast",
+    items:[
+     ["Stack of Pancakes","12.95","Three golden pancakes.",[["With eggs, sausage or bacon","14.95"]]],
+     ["Short Stack","10.95","Two golden pancakes.",[["With eggs, sausage or bacon","12.95"],["With eggs and sausage or bacon","13.95"]]],
+     ["Two × Two × Four","15.95","2 eggs, 2 pancakes, 4 sausages or bacon."],
+     ["Waffle","10.95",null,[["With bacon, sausage or eggs","12.95"],["With eggs and bacon or sausage","13.95"]]],
+     ["Fresh Strawberry Waffle","13.95",null,null,"Favorite"],
+     ["French Toast","10.95",null,[["With bacon, sausage or eggs","12.95"],["With eggs & sausage or bacon","13.95"]]],
+     ["Fresh Strawberry French Toast","13.95",null,[["With eggs & sausage or bacon","16.95"]],"Favorite"],
+     ["Whole Wheat Pancakes","11.95"],
+     ["Biscuits & Gravy","11.95",null,[["With eggs and bacon or sausage","14.95"]]],
+    ]},
+  { id:"lighter", title:"Lighter Fare", photo:"waffle",
+    items:[
+     ["Fresh Fruit","8.00",null,[["With yogurt","9.00"]]],
+     ["Granola & Milk","5.00",null,[["With fruit","6.00"]]],
+     ["Oatmeal","6.00",null,[["With raisins or fruit","7.00"]]],
+     ["Bagel & Cream Cheese","3.00"],
+    ]},
+  { id:"specialties", title:"Breakfast Specialties", photo:"chilaquiles",
+    items:[
+     ["Chilaquiles","16.95","Deep-fried tortilla chips with ranchero sauce, topped with eggs, avocado, sour cream, cheese and onion.",[["With chorizo","18.95"],["With chicken","19.95"],["With steak","23.95"]],"Favorite"],
+     ["Chilaquiles Oaxaqueños","17.95","Deep-fried tortilla chips with ranchero sauce, topped with eggs, parsley, sour cream, cheese and onion."],
+     ["Breakfast Enchiladas","16.95","Eggs, chorizo, tomato, cheese and onion, served with rice, beans, sour cream and guacamole."],
+     ["Breakfast Burrito","15.95","Chorizo, peppers, tomato, eggs & cheese with home fries or hash browns."],
+     ["Breakfast Sandwich","15.95","Eggs, avocado, tomato, cheese, and bacon or ham on grilled sourdough, served with potatoes."],
+     ["Cheese Pot","7.95","Home fries covered with cheese, onion and bell peppers, topped with sour cream.",[["With bacon","9.95"]]],
+    ]},
+  { id:"sides-b", title:"Side Orders", photo:"omelet",
+    items:[
+     ["Bacon or Link Sausages","6.95"],
+     ["Ham","6.95"],
+     ["Hash Browns, Home Fries or French Fries","3.95"],
+     ["Toast & Jam","2.95"],
+     ["1 Egg","2.50"],
+     ["2 Eggs","4.00"],
+    ]},
+ ]},
+ { id:"lunch", label:"Lunch", sections:[
+  { id:"omelets", title:"House Specialty Omelets", photo:"omelet",
+    note:"Made with fresh prepared ingredients and served with toast and hash browns or home fries. Substitute fruit or cottage cheese, add 1.50. No potatoes and toast, less 2.00. Mini omelet Monday–Friday, less 2.00.",
+    items:[
+     ["Cheese Omelet","13.95","Your choice of jack, cheddar, Swiss or pepper jack."],
+     ["Ham Omelet","15.95","Diced ham and cheese."],
+     ["Denver Omelet","16.95","Ham, onions, bell peppers and cheese."],
+     ["Garden Omelet","15.95","Tomato, onion, mushroom, bell peppers and cheese."],
+     ["California Omelet","14.95","Guacamole, salsa, sour cream and cheese."],
+     ["Cotati Omelet","16.95","Chicken apple sausage, sun-dried tomato, green onions, spinach, artichoke hearts and cheese.",null,"House favorite"],
+     ["Chile Relleno Omelet","16.95","Poblano chile stuffed with cheese, topped with green sauce."],
+     ["Chili Omelet","15.95","Homemade chili beans topped with melted cheese and chopped onion."],
+     ["Bacon & Cheese Omelet","15.95","Savory bacon and your choice of cheese."],
+     ["House Omelet","15.95","Sautéed ham, mushroom, Ortega chilies and cheese."],
+     ["Mushroom Omelet","13.95","Sautéed mushrooms and cheese.",[["With spinach","14.95"]]],
+     ["Sausage & Cheese Omelet","15.95","Our breakfast sausage with your choice of cheese."],
+     ["Smoked Turkey, Avocado & Cheese","16.95","A favorite combination."],
+     ["Sautéed Shrimp & Mushroom Omelet","17.95","Topped with our homemade cheese sauce."],
+     ["Bacon, Avocado & Sour Cream","16.95","With cheese."],
+     ["Mexican Omelet","17.95","Chorizo, bell peppers, onion, tomato & cheese, topped with guacamole, homemade salsa and sour cream."],
+     ["Veggie Omelet","14.95","Broccoli, tomato, green onion and mushroom."],
+    ]},
+  { id:"scrambles", title:"Scrambles", photo:"omelet",
+    note:"Served with toast and hash browns or home fries.",
+    items:[
+     ["Marvin's Scramble","17.95","Ham, onion, tomato, mushroom, spinach, cheese and your choice of home fries or hash browns, all scrambled together.",null,"Signature"],
+     ["Cotati Scramble","16.95","Chicken apple sausage, sun-dried tomato, green onion, spinach, artichoke hearts & cheese."],
+     ["Greek Scramble","15.95","Feta cheese, mushroom, spinach & green onions."],
+     ["Chorizo Scramble","16.95","Served with rice, beans and tortillas."],
+     ["Diced Ham Scramble","15.95","Ham and eggs scrambled together."],
+     ["Garden Scramble","14.95","Tomato, onion, bell peppers, mushrooms and cheese."],
+     ["Tofu Scramble","14.95","Spinach, onion, bell peppers, eggs, mushrooms and tomato."],
+     ["Joe's Scramble","17.95","Ground beef, spinach, onion, mushroom and cheese."],
+    ]},
+  { id:"sandwiches", title:"Sandwiches", photo:"burgerEgg",
+    note:"Served with one side: steak fries, coleslaw, fresh fruit, curly fries, sweet potato fries or house-made potato salad. Substitute zucchini sticks, small salad or mozzarella sticks, add 2.50.",
+    items:[
+     ["Turkey Sandwich","15.95","Fresh turkey roasted in our oven every day, on whole wheat with cranberry sauce.",null,"Roasted daily"],
+     ["Turkey California","15.95","Open-face: smoked turkey breast, tomato and fresh guacamole on an English muffin, topped with homemade creamy cheese sauce."],
+     ["Grilled Ham & Cheese","14.95","Sliced ham on rye with Swiss cheese."],
+     ["Main Street Special","14.95","Bacon, tomato, avocado and cheese grilled on wheat bread."],
+     ["Steak Sandwich","22.95","New York steak charbroiled to your liking, topped with melted cheese and grilled onions on a French roll."],
+     ["Veggie Melt","15.95","Sautéed mushroom & onion over sliced avocado & tomato on an English muffin, topped with our homemade creamy cheese sauce."],
+     ["Teriyaki Chicken Sandwich","17.95","Marinated, char-broiled chicken breast with jack cheese, lettuce, tomato & pickles on a French roll.",[["Add avocado","1.75"]]],
+     ["Garden Sandwich","13.95","Fresh avocado, tomato, spinach, cucumber and cheese on whole grain wheat."],
+     ["BLT","14.95","A classic.",[["Add avocado","2.00"]]],
+     ["Marvin's Sandwich","16.95","Avocado, bacon, turkey, tomato & melted cheese on sourdough."],
+     ["Schooner","14.95","Melted cheddar on grilled rye, stuffed with our own tuna salad."],
+     ["The Marina","17.95","Open-face on wheat with shrimp, tomato, lettuce, avocado and shredded Swiss, topped with a thick strip of bacon."],
+     ["Traditional Grilled Cheese","12.95","Cheddar and jack on wheat bread."],
+     ["French Dip","15.95","Hot roast beef piled on a toasted French roll, with au jus for dipping."],
+     ["Cowboy Special","16.95","Grilled roast beef with melted cheese and grilled onions on a toasted roll, with au jus."],
+     ["The Clubhouse","16.95","A triple-decker with turkey, tomato, lettuce and bacon."],
+     ["Reuben","16.95","Corned beef, Swiss, sauerkraut and Thousand Island on rye."],
+    ]},
+  { id:"burgers", title:"Burgers", photo:"burger",
+    note:"Served with one side: steak fries, house-made potato salad, coleslaw, fresh fruit, curly fries or sweet potato fries. Substitute zucchini sticks, small salad or mozzarella sticks, add 2.50.",
+    items:[
+     ["Burger","15.95","Half pound of ground beef on a toasted sesame bun with all the fixings."],
+     ["Cheeseburger","16.95","Covered with melted cheddar.",[["With chili","17.95"]]],
+     ["Bacon Cheeseburger","17.95","The best."],
+     ["Marvin's Burger","19.95","Char-broiled with melted cheese, two eggs, bacon and jalapeños.",null,"Signature"],
+     ["Patty Melt","17.95","Half-pound patty with melted cheddar and grilled onions on rye."],
+     ["French Burger","16.95","Half-pound patty on a grilled French roll with grilled onions and cheddar."],
+     ["Teriyaki Mushroom Burger","17.95","Half-pound patty with melted jack cheese, grilled mushrooms & teriyaki."],
+     ["Garden Burger","15.95","Meatless and fat free, topped with sautéed mushrooms and onions."],
+     ["Turkey Burger","15.95","Char-broiled ground turkey patty with lettuce, tomato and pickles."],
+     ["Chicken Monterey Burger","17.95","Char-broiled chicken breast with melted jack, bacon, avocado, lettuce, tomato and onion."],
+    ]},
+  { id:"specials", title:"Lunch Specials", photo:"chilaquiles",
+    items:[
+     ["Petaluma Teriyaki Lunch","17.95","Broiled boneless chicken breast, served with vegetables & fries."],
+     ["Grilled Chicken Durango","17.95","Topped with cheese, salsa, avocado and sour cream, served with vegetables & fries."],
+     ["Chicken Enchiladas","17.95","Red or green sauce, served with rice and beans."],
+     ["Fish & Chips","17.95","Served with coleslaw and fries."],
+     ["Chicken Veggie Burrito","15.95","Grilled chicken, broccoli, carrots, zucchini and cheese."],
+     ["Chile Relleno Lunch","15.95","Served with rice and beans."],
+    ]},
+  { id:"soups", title:"Soups & Salads", photo:"salad",
+    items:[
+     ["Homemade Soup","5.95","Made fresh daily. Cup.",[["Bowl with fresh bread","7.95"]]],
+     ["Homemade Chili Beans","7.95","Cup with cheese & onions.",[["Bowl with French bread","8.95"]]],
+     ["Soup & Salad","15.95","A bowl of homemade soup and a fresh garden salad, served with French bread."],
+     ["Marvin's Garden Salad","7.95","Iceberg and green leaf lettuce with tomato, carrots, red onion & mushrooms, served with French bread."],
+     ["Chicken Cranberry Salad","17.95","Grilled chicken, cranberries, onions, candied pecans, egg, feta, avocado and fresh strawberries."],
+     ["Smoked Turkey Cobb Salad","16.95","Turkey, bacon bits and shredded carrots on fresh greens with half an avocado, mushroom, red onion, egg, tomato & blue cheese."],
+     ["Tuna Salad","15.95","Chunky white tuna with avocado, mushroom, tomato, carrots and egg on fresh lettuce."],
+     ["Taco Salad","16.95","Seasoned beef in a crunchy tortilla bowl with lettuce, two cheeses, tomato, rice, beans, sour cream & guacamole."],
+     ["Teriyaki Chicken Spinach Salad","17.95","Bacon, egg, tomato, mushroom, onion, carrots, avocado, cucumber, croutons and orange slices.",null,"Favorite"],
+     ["Marvin's Shrimp Salad","19.95","Shrimp, avocado, mushrooms, tomato, egg, sprouts, carrots & onions piled on crisp greens."],
+    ]},
+  { id:"apps", title:"Appetizers", photo:"zucchini",
+    items:[
+     ["Zucchini Sticks","11.95","Our famous house recipe with creamy horseradish dip.",null,"Famous"],
+     ["Onion Rings","9.95"],
+     ["Chicken Tenders","12.95"],
+     ["Mozzarella Sticks","9.95"],
+     ["Quesadilla","11.95","Large flour tortilla grilled with two cheeses and mild Ortega chilies, served with guacamole, sour cream, salsa and chopped tomatoes.",[["Add chicken","15.95"]]],
+     ["Greek Quesadilla","13.95","Feta, mushroom, spinach and green onions."],
+    ]},
+ ]},
+ { id:"drinks", label:"Drinks & Treats", sections:[
+  { id:"coffee", title:"Coffee & Espresso", photo:"drinks",
+    note:"Taylor Lane organic coffee, roasted daily.",
+    items:[
+     ["Coffee","3.50","Regular or decaf."],
+     ["Espresso","3.50"],
+     ["Double Espresso","3.00"],
+     ["Latte","4.50"],
+     ["Cappuccino","3.95"],
+     ["Café Mocha","5.00"],
+     ["White Mocha","5.00"],
+     ["Chai Tea Latte","4.50","Hot or iced."],
+     ["Mocha Oaxaqueña","6.00","Espresso, milk and chocolate from Oaxaca, Mexico, topped with whipped cream.",null,"Specialty"],
+     ["Hot Chocolate","3.95","Steamed milk topped with whipped cream."],
+     ["Extras","",null,[["Add a shot","1.00"],["Add syrup",".50"]]],
+    ]},
+  { id:"cold", title:"Juices, Tea & Soft Drinks", photo:"drinks",
+    items:[
+     ["Fresh-Squeezed Orange Juice","",null,[["Small","4.50"],["Large","6.00"]]],
+     ["Regular Orange Juice","",null,[["Small","3.50"],["Large","4.50"]]],
+     ["Apple, Cranberry or Tomato Juice","",null,[["Small","3.50"],["Large","4.50"]]],
+     ["Milk","",null,[["Small","3.50"],["Large","4.50"]]],
+     ["Hot Tea","3.50","Herb blends."],
+     ["Iced Tea","3.50"],
+     ["Lemonade","3.50"],
+     ["Arnold Palmer","3.50"],
+     ["Soft Drinks","3.75","Coke, Diet Coke, Sprite, Root Beer, Dr Pepper."],
+     ["Bottled Water","2.00"],
+    ]},
+  { id:"bar", title:"Beer, Wine & Cocktails", photo:"drinks",
+    items:[
+     ["Mimosa","8.00","Orange, strawberry, guava, mango or pineapple, rimmed with chamoy and Tajín."],
+     ["Michelada","9.00"],
+     ["Beer","5.00"],
+     ["Wine","6.00"],
+    ]},
+  { id:"treats", title:"Sweet Treats", photo:"waffle",
+    items:[
+     ["Milkshakes","6.00","Strawberry, chocolate, vanilla or Oreo."],
+     ["Root Beer Float","6.00"],
+     ["Chocomilk","4.00"],
+     ["Chocomilk de Plátano","5.00","Banana."],
+    ]},
+ ]},
+];
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const tabsEl = document.getElementById("tabs"), panelsEl = document.getElementById("panels");
+
+MENU.forEach((m, i) => {
+  const t = document.createElement("button");
+  t.className = "tab"; t.role = "tab"; t.id = "tab-"+m.id;
+  t.setAttribute("aria-controls","panel-"+m.id);
+  t.setAttribute("aria-selected", i===0);
+  t.innerHTML = esc(m.label) + `<span class="t-sub">${m.sections.length} sections</span>`;
+  t.onclick = () => select(m.id);
+  tabsEl.append(t);
+
+  const p = document.createElement("div");
+  p.className = "panel"; p.id = "panel-"+m.id; p.role = "tabpanel"; p.hidden = i!==0;
+  p.innerHTML =
+    `<nav class="chips" aria-label="${esc(m.label)} sections">` +
+      m.sections.map(s => `<a href="#${s.id}">${esc(s.title)}</a>`).join("") +
+    `</nav>` +
+    m.sections.map(s => `
+      <div class="cat" id="${s.id}">
+        <div class="cat-head">
+          <img src="${img(s.photo,300)}" alt="" loading="lazy">
+          <div><h3>${esc(s.title)}</h3>${s.note?`<p class="cat-note">${esc(s.note)}</p>`:""}</div>
+        </div>
+        <div class="items">
+          ${s.items.map(([n,pr,d,opts,tag]) => `
+            <div class="item">
+              <div class="item-top">
+                <span class="item-name">${esc(n)}${tag?`<span class="tag">${esc(tag)}</span>`:""}</span>
+                ${pr?`<span class="leader"></span><span class="price">${esc(pr)}</span>`:""}
+              </div>
+              ${d?`<p class="desc">${esc(d)}</p>`:""}
+              ${opts?`<ul class="opts">${opts.map(([l,v])=>`<li><span>${esc(l)}</span><span>${esc(v)}</span></li>`).join("")}</ul>`:""}
+            </div>`).join("")}
+        </div>
+      </div>`).join("");
+  panelsEl.append(p);
+});
+
+function select(id){
+  MENU.forEach(m => {
+    document.getElementById("tab-"+m.id).setAttribute("aria-selected", m.id===id);
+    document.getElementById("panel-"+m.id).hidden = m.id!==id;
+  });
+}
+
+/* Gallery */
+const G = [
+  ["burgerEgg","Marvin's Burger","g-wide g-tall"],
+  ["frenchToast","Strawberry French Toast","g-wide"],
+  ["chilaquiles","Chilaquiles with Steak",""],
+  ["omelet","California Omelet",""],
+  ["salad","Teriyaki Chicken Spinach Salad","g-wide"],
+  ["zucchini","Famous Zucchini Sticks",""],
+  ["drinks","Espresso Bar",""],
+  ["waffle","Fresh Strawberry Waffle",""],
+  ["burger","Bacon Cheeseburger",""],
+];
+document.getElementById("gallery-grid").innerHTML = G.map(([k,c,cl]) =>
+  `<figure class="${cl}"><img src="${img(k, cl.includes('wide')?1000:750)}" alt="${esc(c)}" loading="lazy"><figcaption>${esc(c)}</figcaption></figure>`).join("");
+
+/* Hours + open/closed status (Pacific time) */
+const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+const order = [1,2,3,4,5,6,0];
+const now = new Date(new Date().toLocaleString("en-US",{timeZone:"America/Los_Angeles"}));
+const today = now.getDay();
+document.getElementById("hoursList").innerHTML = order.map(d =>
+  `<li class="${d===today?'today':''}"><span>${days[d]}${d===today?' (today)':''}</span><span>6:00am – 2:30pm</span></li>`).join("");
+const mins = now.getHours()*60 + now.getMinutes();
+const open = mins >= 360 && mins < 870;
+document.getElementById("statusText").textContent = open ? "Open now · until 2:30pm" : "Closed · opens 6:00am";
+document.getElementById("statusDot").classList.toggle("closed", !open);
+document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
